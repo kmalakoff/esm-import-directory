@@ -1,6 +1,6 @@
 Require a directory of .mjs module defaults using @std/esm in Node.js
 
-Example usage
+Usage
 =============
 
 ```js
