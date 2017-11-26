@@ -1,0 +1,25 @@
+{
+  "name": "esm-require-directory",
+  "version": "0.0.1",
+  "description": "Require a directory of .mjs module defaults using @std/esm in Node.js",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmalakoff/esm-require-directory.git"
+  },
+  "keywords": [
+    "@std/esm",
+    "require",
+    "directory",
+    ".mjs"
+  ],
+  "author": "Kevin Malakoff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmalakoff/esm-require-directory/issues"
+  },
+  "homepage": "https://github.com/kmalakoff/esm-require-directory#readme"
+}
