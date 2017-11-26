@@ -3,6 +3,7 @@ Require a directory of .mjs module defaults using @std/esm in Node.js
 Example usage
 =============
 
+```js
 import path from 'path';
 import importDirectory from 'esm-import-directory';
 
@@ -15,3 +16,4 @@ export default async (options) => {
   // import with paths, eg. { 'filename.mjs': { hello: 'world' } }
   const typeDefPaths = await importDirectory(path.join(dirname, 'typeDefs'), { paths: true });  
 };
+```
