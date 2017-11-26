@@ -1,6 +1,6 @@
 {
   "name": "esm-require-directory",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Require a directory of .mjs module defaults using @std/esm in Node.js",
   "main": "index.mjs",
   "scripts": {
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/kmalakoff/esm-require-directory/issues"
   },
-  "homepage": "https://github.com/kmalakoff/esm-require-directory#readme"
+  "homepage": "https://github.com/kmalakoff/esm-require-directory#readme",
+  "dependencies": {
+    "pify": "^3.0.0"
+  }
 }

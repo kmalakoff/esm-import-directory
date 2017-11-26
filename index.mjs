@@ -1,9 +1,9 @@
 import path from 'path';
 import fs from 'fs';
-import { promisify } from 'util';
+import pify from 'pify';
 
 export default async (directory, options={}) => {
-  const fileNames = await promisify(fs.readdir)(directory);
+  const fileNames = await pify(fs.readdir)(directory);
   
   const modules = options.paths ? {} : [];
   for (const fileName of fileNames) {
