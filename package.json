@@ -1,6 +1,6 @@
 {
   "name": "esm-require-directory",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Require a directory of .mjs module defaults using @std/esm in Node.js",
   "main": "index.mjs",
   "scripts": {
