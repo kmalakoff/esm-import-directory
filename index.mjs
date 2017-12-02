@@ -5,7 +5,7 @@ import walk from 'walk-filtered';
 
 const pStat = pify(fs.lstat);
 const pWalk = pify(walk);
-const EXTENSIONS = ['.mjs', '.js'];
+const EXTENSIONS = ['.mjs'];
 
 async function importFile(directory, relativePath, options, results) {
   let module = await import(path.join(directory, relativePath));
