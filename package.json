@@ -1,7 +1,7 @@
 {
-  "name": "esm-require-directory",
-  "version": "1.2.0",
-  "description": "Require a directory of .mjs module defaults using @std/esm in Node.js",
+  "name": "esm-import-directory",
+  "version": "1.0.0",
+  "description": "Require a directory of modules using @std/esm",
   "main": "index.mjs",
   "scripts": {
     "test": "mocha . -r @std/esm test/spec/**/*.test.mjs",
