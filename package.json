@@ -1,7 +1,7 @@
 {
-  "name": "esm-require-directory",
+  "name": "esm-import-directory",
   "version": "1.2.0",
-  "description": "Require a directory of .mjs module defaults using @std/esm in Node.js",
+  "description": "Require a directory of modules using @std/esm",
   "main": "index.mjs",
   "scripts": {
     "test": "mocha . -r @std/esm test/spec/**/*.test.mjs",
@@ -35,6 +35,7 @@
     "eslint": "^4.12.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "lodash.size": "^4.2.0",
     "mocha": "^4.0.1"
   },
   "@std/esm": "cjs"
