@@ -3,7 +3,7 @@ import fs from 'fs';
 import pify from 'pify';
 import walk from 'walk-filtered';
 
-const pStat = pify(fs.stat);
+const pStat = pify(fs.lstat);
 const pWalk = pify(walk);
 const EXTENSIONS = ['.mjs', '.js'];
 
@@ -12,11 +12,15 @@ async function importFile(directory, relativePath, options, results) {
 
   // es6 module so extract default by default unless asked not to
   if (path.extname(relativePath) === '.mjs') {
-    if (!Object.prototype.hasOwnProperty.call(options, 'default') || options.default) module = module.default;
+    if ((options.default === undefined) || options.default) { // check default
+      if (module.default === undefined) return; // no default
+      module = module.default;
+    }
   }
 
-  // store result
-  if (options.paths) { results[relativePath] = module; } else results.push(module); // eslint-disable-line no-param-reassign
+  // collect result
+  if (options.paths) results[relativePath] = module; // eslint-disable-line no-param-reassign
+  else results.push(module); // eslint-disable-line no-param-reassign
 }
 
 export default async (directory, options = {}) => {
@@ -37,16 +41,18 @@ export default async (directory, options = {}) => {
         try { indexStats = await pStat(path.join(directory, relativeIndexPath)); } catch (err) { /* no index */ }
 
         // found index
-        if (indexStats && indexStats.isFile()) {
+        if (indexStats && !indexStats.isDirectory()) {
           await importFile(directory, relativeIndexPath, options, results);
-          break;
+          return false; // do not traverse directories
         }
       }
       return false; // do not traverse directories
     }
-    await importFile(directory, relativePath, options, results);
+
+    const extension = path.extname(relativePath);
+    if (~extensions.indexOf(extension)) await importFile(directory, relativePath, options, results);
     return true; // traverse
-  }, true);
+  }, { stats: true });
 
   return results;
 };
