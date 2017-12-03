@@ -1,7 +1,7 @@
-esm-require-directory
+esm-import-directory
 ------------
 
-Require a directory of .mjs module defaults using @std/esm in Node.js
+Import a directory of modules using @std/esm
 
 **Usage**
 
