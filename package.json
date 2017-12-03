@@ -1,7 +1,7 @@
 {
   "name": "esm-import-directory",
-  "version": "1.0.0",
-  "description": "Require a directory of modules using @std/esm",
+  "version": "1.0.1",
+  "description": "Import a directory of modules using @std/esm",
   "main": "index.mjs",
   "scripts": {
     "test": "mocha . -r @std/esm test/spec/**/*.test.mjs",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kmalakoff/esm-require-directory.git"
+    "url": "git+https://github.com/kmalakoff/esm-import-directory.git"
   },
   "keywords": [
     "@std/esm",
@@ -21,9 +21,9 @@
   "author": "Kevin Malakoff",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kmalakoff/esm-require-directory/issues"
+    "url": "https://github.com/kmalakoff/esm-import-directory/issues"
   },
-  "homepage": "https://github.com/kmalakoff/esm-require-directory#readme",
+  "homepage": "https://github.com/kmalakoff/esm-import-directory#readme",
   "dependencies": {
     "pify": "^3.0.0",
     "walk-filtered": "^1.3.0"
