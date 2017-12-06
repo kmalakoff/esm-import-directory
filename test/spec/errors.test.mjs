@@ -1,5 +1,5 @@
 import path from 'path';
-import { assert } from 'chai';
+import chai from 'chai'; const { assert } = chai;
 
 import importDirectory from '../..';
 
