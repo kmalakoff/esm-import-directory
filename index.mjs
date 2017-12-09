@@ -4,7 +4,6 @@ import pify from 'pify';
 import walk from 'walk-filtered';
 
 const pStat = pify(fs.lstat);
-const pWalk = pify(walk);
 const EXTENSIONS = ['.mjs'];
 
 async function importFile(directory, relativePath, options, results) {
@@ -27,7 +26,7 @@ export default async (directory, options = {}) => {
   const extensions = options.extensions || EXTENSIONS;
   const results = options.paths ? {} : [];
 
-  await pWalk(directory, async (relativePath, stats) => {
+  await walk(directory, async (relativePath, stats) => {
     if (relativePath === '') return true;
 
     if (stats.isDirectory()) {
