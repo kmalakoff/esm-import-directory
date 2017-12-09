@@ -1,6 +1,6 @@
 {
   "name": "esm-import-directory",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Import a directory of modules using @std/esm",
   "main": "index.mjs",
   "scripts": {
