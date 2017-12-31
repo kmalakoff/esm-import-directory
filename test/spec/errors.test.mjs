@@ -11,7 +11,11 @@ describe('errors', () => {
     const DATA_DIRECTORY = path.join(dirname, '..', 'data', 'errors', 'cjs');
     let err;
 
-    try { await importDirectory(DATA_DIRECTORY, { extensions: ['.mjs'], recursive: false }); } catch (_err) { err = _err; }
+    try {
+      await importDirectory(DATA_DIRECTORY, { extensions: ['.mjs'], recursive: false });
+    } catch (_err) {
+      err = _err;
+    }
 
     assert.ok(!!err);
   });
@@ -20,7 +24,11 @@ describe('errors', () => {
     const DATA_DIRECTORY = path.join(dirname, '..', 'data', 'errors', 'cjs');
     let err;
 
-    try { await importDirectory(DATA_DIRECTORY, { extensions: ['.js'], recursive: false }); } catch (_err) { err = _err; }
+    try {
+      await importDirectory(DATA_DIRECTORY, { extensions: ['.js'], recursive: false });
+    } catch (_err) {
+      err = _err;
+    }
 
     assert.ok(!!err);
   });
