@@ -6,6 +6,16 @@ import walk from 'walk-filtered';
 const pStat = pify(fs.lstat);
 const EXTENSIONS = ['.mjs'];
 
+function fileName(relativePath) {
+  return path.basename(relativePath, path.extname(relativePath));
+}
+
+function fileDirName(relativePath) {
+  const dirname = path.dirname(relativePath);
+  const filename = fileName(relativePath);
+  return path.join(dirname, filename);
+}
+
 async function importFile(directory, relativePath, options, results) {
   let module = await import(path.join(directory, relativePath));
 
@@ -19,14 +29,24 @@ async function importFile(directory, relativePath, options, results) {
   }
 
   // collect result
-  if (options.paths)
-    results[relativePath] = module; // eslint-disable-line no-param-reassign
-  else results.push(module); // eslint-disable-line no-param-reassign
+  if (options.paths) {
+    if (options.filename) {
+      results[fileDirName(relativePath)] = module; // eslint-disable-line no-param-reassign
+    } else {
+      results[relativePath] = module; // eslint-disable-line no-param-reassign
+    }
+  } else if (options.filename) {
+    const key = fileName(relativePath);
+    if (results[key] !== undefined) {
+      const value = Array.isArray(results[key]) ? results[key] : [results[key]];
+      results[key] = value.concat(module); // eslint-disable-line no-param-reassign
+    } else results[key] = module;
+  } else results.push(module); // eslint-disable-line no-param-reassign
 }
 
 export default async (directory, options = {}) => {
   const extensions = options.extensions || EXTENSIONS;
-  const results = options.paths ? {} : [];
+  const results = options.paths || options.filename ? {} : [];
 
   await walk(
     directory,
