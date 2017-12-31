@@ -1,17 +1,21 @@
 module.exports = {
-  extends: 'airbnb-base',
+  extends: ['standard', 'prettier'],
   parser: 'babel-eslint',
-  env: { mocha: true },
+  env: {
+    es6: true,
+    node: true
+  },
+  plugins: ['import'],
   settings: {
     'import/resolver': {
-      node: { extensions: ['.mjs', '.js'] }
-    },
+      node: { extensions: ['.mjs', '.js', '.json'] }
+    }
+  },
+  parserOptions: {
+    sourceType: 'module'
   },
   rules: {
-    'max-len': [2, {code: 160, tabWidth: 4}],
     'import/extensions': ['error', 'always', { js: 'never', mjs: 'never' }],
-    'no-restricted-syntax': 'off',
-    'no-await-in-loop': 'off',
-    'no-bitwise': 'off',
+    'no-throw-literal': 'off'
   }
 };
