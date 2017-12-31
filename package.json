@@ -1,10 +1,10 @@
 {
   "name": "esm-import-directory",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Import a directory of modules using @std/esm",
   "main": "index.mjs",
   "scripts": {
-    "test": "mocha . -r @std/esm test/spec/**/*.test.mjs",
+    "test": "mocha -r @std/esm test/spec/**/*.test.mjs",
     "lint": "eslint . --ext js,mjs",
     "format": "prettier --write '**/*.{js,mjs}'"
   },
@@ -12,12 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/kmalakoff/esm-import-directory.git"
   },
-  "keywords": [
-    "@std/esm",
-    "require",
-    "directory",
-    ".mjs"
-  ],
+  "keywords": ["@std/esm", "require", "directory", ".mjs"],
   "author": "Kevin Malakoff",
   "license": "MIT",
   "bugs": {
