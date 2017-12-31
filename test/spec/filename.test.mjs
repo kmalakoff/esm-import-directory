@@ -18,7 +18,7 @@ describe('filename', () => {
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), 5);
       Object.entries(results).forEach(([name]) => {
-        assert.equal(path.extname(name), '.mjs');
+        assert.equal(path.extname(name), '');
       });
     });
 

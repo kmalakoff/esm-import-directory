@@ -25,6 +25,6 @@ const dirname = path.dirname(import.meta.url.replace('file://', ''));
 
 * recursive (boolean) - traverse modules recursively. Default: false.
 * paths (boolean) - modules returned as an object with relative paths vs as an array. Default: false.
-* filename (boolean) - only return the filename without the extension. Default: false.
+* filename (boolean) - only return the filename without the extension. Default: true for paths.
 * default (boolean) - extract default from es6 modules. Default: true.
 * extensions (array) - the file extension types to process. Default: ['.mjs']
