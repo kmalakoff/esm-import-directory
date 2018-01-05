@@ -1,5 +1,7 @@
 ## esm-import-directory
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kmalakoff/esm-import-directory.svg)](https://greenkeeper.io/)
+
 Import a directory of modules using @std/esm
 
 **Usage**
