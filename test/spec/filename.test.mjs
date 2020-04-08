@@ -2,7 +2,7 @@ import path from 'path';
 import chai from 'chai';
 import size from 'lodash.size';
 
-import importDirectory from '../..';
+import importDirectory from '../../index.mjs';
 
 const { assert } = chai;
 const dirname = path.dirname(import.meta.url.replace('file://', ''));
@@ -13,7 +13,7 @@ describe('filename', () => {
     it('filename: (default), recursive: true', async () => {
       const results = await importDirectory(DATA_DIRECTORY, {
         paths: true,
-        recursive: true
+        recursive: true,
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), 5);
@@ -26,7 +26,7 @@ describe('filename', () => {
       const results = await importDirectory(DATA_DIRECTORY, {
         filename: true,
         paths: true,
-        recursive: true
+        recursive: true,
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), 5);
@@ -39,7 +39,7 @@ describe('filename', () => {
       const results = await importDirectory(DATA_DIRECTORY, {
         filename: false,
         paths: true,
-        recursive: true
+        recursive: true,
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), 5);
@@ -53,7 +53,7 @@ describe('filename', () => {
     it('filename: (default), recursive: true', async () => {
       const results = await importDirectory(DATA_DIRECTORY, {
         paths: false,
-        recursive: true
+        recursive: true,
       });
       assert.ok(Array.isArray(results));
       assert.equal(size(results), 5);
@@ -63,7 +63,7 @@ describe('filename', () => {
       const results = await importDirectory(DATA_DIRECTORY, {
         filename: true,
         paths: false,
-        recursive: false
+        recursive: false,
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), 1);
@@ -77,7 +77,7 @@ describe('filename', () => {
       const results = await importDirectory(DATA_DIRECTORY, {
         filename: true,
         paths: false,
-        recursive: true
+        recursive: true,
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), 1);
@@ -91,7 +91,7 @@ describe('filename', () => {
       const results = await importDirectory(DATA_DIRECTORY, {
         filename: false,
         paths: false,
-        recursive: true
+        recursive: true,
       });
       assert.ok(Array.isArray(results));
       assert.equal(size(results), 5);
