@@ -1,6 +1,6 @@
 ## esm-import-directory
 
-Import a directory of modules using @std/esm
+Import a directory of modules using es6 modules import
 
 **Usage**
 
@@ -16,15 +16,15 @@ const dirname = path.dirname(import.meta.url.replace('file://', ''));
 
   // import with paths, eg. { 'filename.mjs': { hello: 'world' } }
   const typeDefPaths = await importDirectory(path.join(dirname, 'typeDefs'), {
-    paths: true
+    paths: true,
   });
 })();
 ```
 
 **Options**
 
-* recursive (boolean) - traverse modules recursively. Default: false.
-* paths (boolean) - modules returned as an object with relative paths vs as an array. Default: false.
-* filename (boolean) - only return the filename without the extension. Default: true for paths.
-* default (boolean) - extract default from es6 modules. Default: true.
-* extensions (array) - the file extension types to process. Default: ['.mjs']
+- recursive (boolean) - traverse modules recursively. Default: false.
+- paths (boolean) - modules returned as an object with relative paths vs as an array. Default: false.
+- filename (boolean) - only return the filename without the extension. Default: true for paths.
+- default (boolean) - extract default from es6 modules. Default: true.
+- extensions (array) - the file extension types to process. Default: ['.mjs']
