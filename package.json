@@ -1,10 +1,10 @@
 {
   "name": "esm-import-directory",
   "version": "1.4.0",
-  "description": "Import a directory of modules using @std/esm",
+  "description": "Import a directory of modules using es6 modules import",
   "main": "index.mjs",
   "scripts": {
-    "test": "mocha -r @std/esm test/spec/**/*.test.mjs",
+    "test": "mocha test/spec/**/*.test.mjs --experimental-modules",
     "lint": "eslint . --ext js,mjs",
     "format": "prettier --write '**/*.{js,mjs}'"
   },
@@ -12,7 +12,13 @@
     "type": "git",
     "url": "git+https://github.com/kmalakoff/esm-import-directory.git"
   },
-  "keywords": ["@std/esm", "require", "directory", ".mjs"],
+  "keywords": [
+    "es6",
+    "import",
+    "require",
+    "directory",
+    ".mjs"
+  ],
   "author": "Kevin Malakoff",
   "license": "MIT",
   "bugs": {
@@ -20,22 +26,22 @@
   },
   "homepage": "https://github.com/kmalakoff/esm-import-directory#readme",
   "dependencies": {
-    "pify": "^4.0.1",
-    "walk-filtered": "^1.14.0"
+    "pify": "^5.0.0",
+    "walk-filtered": "^2.1.0"
   },
   "devDependencies": {
     "@std/esm": "^0.26.0",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "lodash.size": "^4.2.0",
-    "mocha": "^6.1.4",
-    "prettier": "^1.18.2"
+    "mocha": "^7.1.1",
+    "prettier": "^2.0.4"
   }
 }

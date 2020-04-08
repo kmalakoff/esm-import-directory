@@ -8,7 +8,7 @@ const DEFAULT_OPTIONS = {
   recursive: false,
   paths: false,
   default: true,
-  extensions: ['.mjs']
+  extensions: ['.mjs'],
 };
 
 function fileName(relativePath) {
@@ -53,37 +53,34 @@ export default async (directory, options = {}) => {
 
   await walk(
     directory,
-    async (relativePath, stats) => {
-      if (relativePath === '') return true;
+    async (entry) => {
+      if (entry.path === '') return true;
 
-      if (stats.isDirectory()) {
-        if (options.recursive) return true; // traverse directories
+      if (entry.stats.isDirectory()) {
+        if (!options.recursive) return true; // will pick up in traverse
 
         // check for index file one level under the directory
         for (const extension of options.extensions) {
-          const relativeIndexPath = path.join(relativePath, `index${extension}`);
+          const relativeIndexPath = path.join(entry.path, `index${extension}`);
 
-          let indexStats;
+          // check for index file one directly down
           try {
-            indexStats = await pStat(path.join(directory, relativeIndexPath));
+            const indexStats = await pStat(entry.fullPath);
+            if (indexStats && !indexStats.isDirectory()) {
+              await importFile(directory, relativeIndexPath, options, results);
+              return false; // found index so do not traverse further
+            }
           } catch (err) {
             /* no index */
           }
-
-          // found index
-          if (indexStats && !indexStats.isDirectory()) {
-            await importFile(directory, relativeIndexPath, options, results);
-            return false; // do not traverse directories
-          }
         }
-        return false; // do not traverse directories
+      } else {
+        const extension = path.extname(entry.path);
+        if (~options.extensions.indexOf(extension)) await importFile(directory, entry.path, options, results);
+        return true; // traverse
       }
-
-      const extension = path.extname(relativePath);
-      if (~options.extensions.indexOf(extension)) await importFile(directory, relativePath, options, results);
-      return true; // traverse
     },
-    { stats: true }
+    { stats: true, depth: options.recursive ? Infinity : 0 }
   );
 
   return results;
