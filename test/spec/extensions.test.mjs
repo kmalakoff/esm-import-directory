@@ -2,7 +2,7 @@ import path from 'path';
 import chai from 'chai';
 import size from 'lodash.size';
 
-import importDirectory from '../..';
+import importDirectory from '../../index.mjs';
 
 const { assert } = chai;
 const dirname = path.dirname(import.meta.url.replace('file://', ''));
