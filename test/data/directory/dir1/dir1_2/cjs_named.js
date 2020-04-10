@@ -1,1 +1,1 @@
-module.exports.named = () => {};
+module.exports.named = function() {};

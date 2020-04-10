@@ -1,10 +1,17 @@
 {
   "name": "esm-import-directory",
-  "version": "1.4.0",
+  "version": "2.1.0",
   "description": "Import a directory of modules using es6 modules import",
-  "main": "index.mjs",
+  "type": "commonjs",
+  "main": "./index.js",
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.js"
+  },
   "scripts": {
-    "test": "mocha test/spec/**/*.test.mjs --experimental-modules",
+    "test": "npm run test-cjs && npm run test-esm",
+    "test-cjs": "mocha test/spec/**/*.test.js",
+    "test-esm": "mocha test/spec/**/*.test.mjs",
     "lint": "eslint . --ext js,mjs",
     "format": "prettier --write '**/*.{js,mjs}'"
   },
@@ -13,6 +20,7 @@
     "url": "git+https://github.com/kmalakoff/esm-import-directory.git"
   },
   "keywords": [
+    "esm",
     "es6",
     "import",
     "require",
@@ -26,11 +34,9 @@
   },
   "homepage": "https://github.com/kmalakoff/esm-import-directory#readme",
   "dependencies": {
-    "pify": "^5.0.0",
-    "walk-filtered": "^2.1.0"
+    "esm-require-directory": "^2.3.0"
   },
   "devDependencies": {
-    "@std/esm": "^0.26.0",
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
