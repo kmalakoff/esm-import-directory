@@ -1,1 +1,1 @@
-export const named = () => {};
+export var named = function() {};

@@ -1,0 +1,76 @@
+var path = require('path');
+var chai = require('chai');
+var size = require('lodash.size');
+
+var requireDirectory = require('../..');
+
+var assert = chai.assert;
+var DATA_DIRECTORY = path.join(__dirname, '..', 'data', 'directory');
+
+describe('paths', function () {
+  it("extensions: ['.js'], recursive: false, paths: true", function (done) {
+    requireDirectory(
+      DATA_DIRECTORY,
+      {
+        extensions: ['.js'],
+        recursive: false,
+        paths: true,
+      },
+      function (err, results) {
+        assert.ok(!err);
+        assert.equal(size(results), 2);
+        done();
+      }
+    );
+  });
+
+  it("extensions: ['.js'], recursive: true, paths: true", function (done) {
+    requireDirectory(
+      DATA_DIRECTORY,
+      {
+        extensions: ['.js'],
+        recursive: true,
+        paths: true,
+      },
+      function (err, results) {
+        assert.ok(!err);
+        assert.equal(size(results), 10);
+        done();
+      }
+    );
+  });
+
+  it("extensions: ['.js'], recursive: false, default: false, paths: true", function (done) {
+    requireDirectory(
+      DATA_DIRECTORY,
+      {
+        extensions: ['.js'],
+        recursive: false,
+        default: false,
+        paths: true,
+      },
+      function (err, results) {
+        assert.ok(!err);
+        assert.equal(size(results), 2);
+        done();
+      }
+    );
+  });
+
+  it("extensions: ['.js'], recursive: true, default: false, paths: true", function (done) {
+    requireDirectory(
+      DATA_DIRECTORY,
+      {
+        extensions: ['.js'],
+        recursive: true,
+        default: false,
+        paths: true,
+      },
+      function (err, results) {
+        assert.ok(!err);
+        assert.equal(size(results), 10);
+        done();
+      }
+    );
+  });
+});
