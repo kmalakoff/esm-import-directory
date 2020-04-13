@@ -1,6 +1,6 @@
 {
   "name": "esm-import-directory",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Import a directory of modules using es6 modules import",
   "type": "commonjs",
   "main": "./index.js",
@@ -11,7 +11,7 @@
   "scripts": {
     "test": "npm run test-cjs && npm run test-esm",
     "test-cjs": "mocha test/spec/**/*.test.js",
-    "test-esm": "mocha test/spec/**/*.test.mjs",
+    "test-esm": "nave use 13 mocha test/spec/**/*.test.mjs",
     "lint": "eslint . --ext js,mjs",
     "format": "prettier --write '**/*.{js,mjs}'"
   },
@@ -48,6 +48,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "lodash.size": "^4.2.0",
     "mocha": "^7.1.1",
+    "nave": "^3.2.1",
     "prettier": "^2.0.4"
   }
 }
