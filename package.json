@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/kmalakoff/esm-import-directory#readme",
   "dependencies": {
-    "esm-require-directory": "^2.6.1"
+    "esm-require-directory": "^2.6.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
