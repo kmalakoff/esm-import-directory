@@ -4,19 +4,20 @@ module.exports = {
   env: {
     es6: true,
     node: true,
-    mocha: true
+    mocha: true,
   },
   plugins: ['import'],
   settings: {
     'import/resolver': {
-      node: { extensions: ['.mjs', '.js', '.json'] }
-    }
+      node: { extensions: ['.mjs', '.js', '.json'] },
+    },
   },
   parserOptions: {
-    sourceType: 'module'
+    sourceType: 'module',
   },
   rules: {
     'import/extensions': ['error', 'always', { js: 'never', mjs: 'never' }],
-    'no-throw-literal': 'off'
-  }
+    'no-throw-literal': 'off',
+    'import/extensions': 'off',
+  },
 };
