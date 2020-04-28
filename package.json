@@ -1,6 +1,6 @@
 {
   "name": "esm-import-directory",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Import a directory of modules using es6 modules import",
   "type": "commonjs",
   "main": "./index.js",
@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/kmalakoff/esm-import-directory#readme",
   "dependencies": {
-    "esm-require-directory": "^2.6.4"
+    "esm-require-directory": "^2.6.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
