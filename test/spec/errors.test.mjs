@@ -1,14 +1,15 @@
 import path from 'path';
+import url from 'url';
 import chai from 'chai';
 
 import importDirectory from '../../index.mjs';
 
 const { assert } = chai;
-const dirname = path.dirname(import.meta.url.replace('file://', ''));
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 describe('errors', () => {
   it('fail to import an errored module (mjs)', async () => {
-    const DATA_DIRECTORY = path.join(dirname, '..', 'data', 'errors');
+    const DATA_DIRECTORY = path.join(__dirname, '..', 'data', 'errors');
     let err;
 
     try {
@@ -21,7 +22,7 @@ describe('errors', () => {
   });
 
   it('fail to import an errored module (cjs)', async () => {
-    const DATA_DIRECTORY = path.join(dirname, '..', 'data', 'errors');
+    const DATA_DIRECTORY = path.join(__dirname, '..', 'data', 'errors');
     let err;
 
     try {
