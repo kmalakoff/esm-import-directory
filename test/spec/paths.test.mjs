@@ -1,12 +1,13 @@
 import path from 'path';
+import url from 'url';
 import chai from 'chai';
 import size from 'lodash.size';
 
 import importDirectory from '../../index.mjs';
 
 const { assert } = chai;
-const dirname = path.dirname(import.meta.url.replace('file://', ''));
-const DATA_DIRECTORY = path.join(dirname, '..', 'data', 'directory');
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+const DATA_DIRECTORY = path.join(__dirname, '..', 'data', 'directory');
 
 describe('paths', () => {
   it("extensions: ['.mjs'], recursive: false, paths: true", async () => {
