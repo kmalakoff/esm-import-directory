@@ -2,26 +2,6 @@
   "name": "esm-import-directory",
   "version": "2.3.4",
   "description": "Import a directory of modules using es6 modules import",
-  "type": "commonjs",
-  "main": "./index.js",
-  "exports": {
-    "import": "./index.mjs",
-    "require": "./index.js"
-  },
-  "scripts": {
-    "test": "run-s test-cjs test-esm",
-    "test-cjs": "mocha test/spec/**/*.test.js",
-    "test-esm": "nvs 14 mocha test/spec/**/*.test.mjs",
-    "compat-cjs": "nvs 14,12,10,8,6,4,0.12,0.10,0.8 mocha-compat test/spec/**/*.test.js",
-    "compat-esm": "nvs 14 mocha test/spec/**/*.test.mjs",
-    "compat": "run-s compat-cjs compat-esm",
-    "lint": "eslint . --ext js,mjs",
-    "format": "prettier --write '**/*.{js,mjs}'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kmalakoff/esm-import-directory.git"
-  },
   "keywords": [
     "esm",
     "es6",
@@ -30,19 +10,39 @@
     "directory",
     ".mjs"
   ],
-  "author": "Kevin Malakoff",
-  "license": "MIT",
+  "homepage": "https://github.com/kmalakoff/esm-import-directory#readme",
   "bugs": {
     "url": "https://github.com/kmalakoff/esm-import-directory/issues"
   },
-  "homepage": "https://github.com/kmalakoff/esm-import-directory#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmalakoff/esm-import-directory.git"
+  },
+  "license": "MIT",
+  "author": "Kevin Malakoff",
+  "type": "commonjs",
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.js"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "compat": "run-s compat-cjs compat-esm",
+    "compat-cjs": "nvs --engines mocha-compat test/spec/**/*.test.js",
+    "compat-esm": "nvs --versions 14 mocha test/spec/**/*.test.mjs",
+    "format": "prettier --write '**/*.{js,mjs}'",
+    "lint": "eslint . --ext js,mjs",
+    "test": "run-s test-cjs test-esm",
+    "test-cjs": "mocha-compat test/spec/**/*.test.js",
+    "test-esm": "nvs --versions 14 mocha test/spec/**/*.test.mjs"
+  },
   "dependencies": {
     "esm-require-directory": "^2.6.6"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
@@ -50,10 +50,12 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "lodash.size": "^4.2.0",
-    "mocha": "^7.1.2",
     "mocha-compat": "^3.5.5",
     "npm-run-all": "^4.1.5",
-    "nvs": "^0.2.0",
+    "nvs": "^0.3.0",
     "prettier": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=0.8.0"
   }
 }
