@@ -7,11 +7,11 @@ import importDirectory from '../../index.mjs';
 
 const { assert } = chai;
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-const DATA_DIRECTORY = path.join(__dirname, '..', 'data', 'directory');
+const DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
 
 describe('paths', () => {
   it("extensions: ['.mjs'], recursive: false, paths: true", async () => {
-    const results = await importDirectory(DATA_DIRECTORY, {
+    const results = await importDirectory(DATA_DIR, {
       extensions: ['.mjs'],
       recursive: false,
       paths: true,
@@ -20,7 +20,7 @@ describe('paths', () => {
   });
 
   it("extensions: ['.mjs'], recursive: true, paths: true", async () => {
-    const results = await importDirectory(DATA_DIRECTORY, {
+    const results = await importDirectory(DATA_DIR, {
       extensions: ['.mjs'],
       recursive: true,
       paths: true,
@@ -29,7 +29,7 @@ describe('paths', () => {
   });
 
   it("extensions: ['.mjs'], recursive: false, default: false, paths: true", async () => {
-    const results = await importDirectory(DATA_DIRECTORY, {
+    const results = await importDirectory(DATA_DIR, {
       extensions: ['.mjs'],
       recursive: false,
       default: false,
@@ -39,7 +39,7 @@ describe('paths', () => {
   });
 
   it("extensions: ['.mjs'], recursive: true, default: false, paths: true", async () => {
-    const results = await importDirectory(DATA_DIRECTORY, {
+    const results = await importDirectory(DATA_DIR, {
       extensions: ['.mjs'],
       recursive: true,
       default: false,
