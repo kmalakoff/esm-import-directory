@@ -5,13 +5,13 @@ var size = require('lodash.size');
 var requireDirectory = require('../..');
 
 var assert = chai.assert;
-var DATA_DIRECTORY = path.join(__dirname, '..', 'data', 'directory');
+var DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
 
 describe('filename', function () {
   describe('paths: true', function () {
     it('filename: (default), recursive: true', function (done) {
       requireDirectory(
-        DATA_DIRECTORY,
+        DATA_DIR,
         {
           paths: true,
           recursive: true,
@@ -30,7 +30,7 @@ describe('filename', function () {
 
     it('filename: true, recursive: true', function (done) {
       requireDirectory(
-        DATA_DIRECTORY,
+        DATA_DIR,
         {
           filename: true,
           paths: true,
@@ -50,7 +50,7 @@ describe('filename', function () {
 
     it('filename: false, recursive: true', function (done) {
       requireDirectory(
-        DATA_DIRECTORY,
+        DATA_DIR,
         {
           filename: false,
           paths: true,
@@ -72,7 +72,7 @@ describe('filename', function () {
   describe('paths: false', function () {
     it('filename: (default), recursive: true', function (done) {
       requireDirectory(
-        DATA_DIRECTORY,
+        DATA_DIR,
         {
           paths: false,
           recursive: true,
@@ -88,7 +88,7 @@ describe('filename', function () {
 
     it('filename: true, recursive: false', function (done) {
       requireDirectory(
-        DATA_DIRECTORY,
+        DATA_DIR,
         {
           filename: true,
           paths: false,
@@ -110,7 +110,7 @@ describe('filename', function () {
 
     it('filename: true, recursive: true', function (done) {
       requireDirectory(
-        DATA_DIRECTORY,
+        DATA_DIR,
         {
           filename: true,
           paths: false,
@@ -132,7 +132,7 @@ describe('filename', function () {
 
     it('filename: false, recursive: true', function (done) {
       requireDirectory(
-        DATA_DIRECTORY,
+        DATA_DIR,
         {
           filename: false,
           paths: false,

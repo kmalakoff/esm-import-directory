@@ -7,12 +7,12 @@ import importDirectory from '../../index.mjs';
 
 const { assert } = chai;
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-const DATA_DIRECTORY = path.join(__dirname, '..', 'data', 'directory');
+const DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
 
 describe('filename', () => {
   describe('paths: true', () => {
     it('filename: (default), recursive: true', async () => {
-      const results = await importDirectory(DATA_DIRECTORY, {
+      const results = await importDirectory(DATA_DIR, {
         paths: true,
         recursive: true,
       });
@@ -24,7 +24,7 @@ describe('filename', () => {
     });
 
     it('filename: true, recursive: true', async () => {
-      const results = await importDirectory(DATA_DIRECTORY, {
+      const results = await importDirectory(DATA_DIR, {
         filename: true,
         paths: true,
         recursive: true,
@@ -37,7 +37,7 @@ describe('filename', () => {
     });
 
     it('filename: false, recursive: true', async () => {
-      const results = await importDirectory(DATA_DIRECTORY, {
+      const results = await importDirectory(DATA_DIR, {
         filename: false,
         paths: true,
         recursive: true,
@@ -52,7 +52,7 @@ describe('filename', () => {
 
   describe('paths: false', () => {
     it('filename: (default), recursive: true', async () => {
-      const results = await importDirectory(DATA_DIRECTORY, {
+      const results = await importDirectory(DATA_DIR, {
         paths: false,
         recursive: true,
       });
@@ -61,7 +61,7 @@ describe('filename', () => {
     });
 
     it('filename: true, recursive: false', async () => {
-      const results = await importDirectory(DATA_DIRECTORY, {
+      const results = await importDirectory(DATA_DIR, {
         filename: true,
         paths: false,
         recursive: false,
@@ -75,7 +75,7 @@ describe('filename', () => {
     });
 
     it('filename: true, recursive: true', async () => {
-      const results = await importDirectory(DATA_DIRECTORY, {
+      const results = await importDirectory(DATA_DIR, {
         filename: true,
         paths: false,
         recursive: true,
@@ -89,7 +89,7 @@ describe('filename', () => {
     });
 
     it('filename: false, recursive: true', async () => {
-      const results = await importDirectory(DATA_DIRECTORY, {
+      const results = await importDirectory(DATA_DIR, {
         filename: false,
         paths: false,
         recursive: true,
