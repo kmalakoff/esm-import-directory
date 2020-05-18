@@ -5,12 +5,12 @@ var size = require('lodash.size');
 var requireDirectory = require('../..');
 
 var assert = chai.assert;
-var DATA_DIRECTORY = path.join(__dirname, '..', 'data', 'directory');
+var DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
 
 describe('paths', function () {
   it("extensions: ['.js'], recursive: false, paths: true", function (done) {
     requireDirectory(
-      DATA_DIRECTORY,
+      DATA_DIR,
       {
         extensions: ['.js'],
         recursive: false,
@@ -26,7 +26,7 @@ describe('paths', function () {
 
   it("extensions: ['.js'], recursive: true, paths: true", function (done) {
     requireDirectory(
-      DATA_DIRECTORY,
+      DATA_DIR,
       {
         extensions: ['.js'],
         recursive: true,
@@ -42,7 +42,7 @@ describe('paths', function () {
 
   it("extensions: ['.js'], recursive: false, default: false, paths: true", function (done) {
     requireDirectory(
-      DATA_DIRECTORY,
+      DATA_DIR,
       {
         extensions: ['.js'],
         recursive: false,
@@ -59,7 +59,7 @@ describe('paths', function () {
 
   it("extensions: ['.js'], recursive: true, default: false, paths: true", function (done) {
     requireDirectory(
-      DATA_DIRECTORY,
+      DATA_DIR,
       {
         extensions: ['.js'],
         recursive: true,
