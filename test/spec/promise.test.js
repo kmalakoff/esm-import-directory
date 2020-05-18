@@ -4,13 +4,13 @@ var chai = require('chai');
 var requireDirectory = require('../..');
 
 var assert = chai.assert;
-var DATA_DIRECTORY = path.join(__dirname, '..', 'data', 'directory');
+var DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
 
 describe('promise', function () {
   if (typeof Promise === 'undefined') return; // no promise support
 
   it('default: true, recursive: false', function (done) {
-    requireDirectory(DATA_DIRECTORY, { default: true, recursive: false })
+    requireDirectory(DATA_DIR, { default: true, recursive: false })
       .then(function (results) {
         assert.equal(results.length, 2);
         done();
@@ -21,7 +21,7 @@ describe('promise', function () {
   });
 
   it('default: true, recursive: true', function (done) {
-    requireDirectory(DATA_DIRECTORY, { default: true, recursive: true })
+    requireDirectory(DATA_DIR, { default: true, recursive: true })
       .then(function (results) {
         assert.equal(results.length, 10);
         done();
@@ -32,7 +32,7 @@ describe('promise', function () {
   });
 
   it('default: false, recursive: false', function (done) {
-    requireDirectory(DATA_DIRECTORY, { default: false, recursive: false })
+    requireDirectory(DATA_DIR, { default: false, recursive: false })
       .then(function (results) {
         assert.equal(results.length, 2);
         done();
@@ -43,7 +43,7 @@ describe('promise', function () {
   });
 
   it('default: false, recursive: true', function (done) {
-    requireDirectory(DATA_DIRECTORY, { default: false, recursive: true })
+    requireDirectory(DATA_DIR, { default: false, recursive: true })
       .then(function (results) {
         assert.equal(results.length, 10);
         done();
