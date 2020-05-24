@@ -27,9 +27,6 @@
   },
   "main": "./index.js",
   "scripts": {
-    "compat": "run-s compat-cjs compat-esm",
-    "compat-cjs": "nvs --engines mocha-compat test/spec/**/*.test.js",
-    "compat-esm": "nvs --versions 14 mocha test/spec/**/*.test.mjs",
     "format": "prettier --write '**/*.{js,mjs}'",
     "lint": "eslint . --ext js,mjs",
     "test": "run-s test-cjs test-esm",
