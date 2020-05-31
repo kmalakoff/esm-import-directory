@@ -27,7 +27,7 @@
   },
   "main": "./index.js",
   "scripts": {
-    "format": "prettier --write '**/*.{js,mjs}'",
+    "format": "prettier --write .",
     "lint": "eslint . --ext js,mjs",
     "test": "dtd \"npm run test-cjs\" \"npm run test-esm\"",
     "test-cjs": "mocha-compat test/spec/**/*.test.js",
