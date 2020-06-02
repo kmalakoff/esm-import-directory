@@ -16,7 +16,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'import/extensions': ['error', 'always', { js: 'never', mjs: 'always' }],
+    'import/extensions': ['error', 'always'],
     'no-throw-literal': 'off',
   },
 };
