@@ -29,10 +29,10 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext js,mjs",
+    "prepublishOnly": "dtd \"npm run lint\" \"depcheck\"",
     "test": "dtd \"npm run test-cjs\" \"npm run test-esm\"",
     "test-cjs": "mocha-compat test/spec/**/*.test.js",
-    "test-esm": "nvs 14 mocha test/spec/**/*.test.mjs",
-    "prepublishOnly": "dtd \"npm run lint\" \"depcheck\""
+    "test-esm": "nvs 14 mocha test/spec/**/*.test.mjs"
   },
   "dependencies": {
     "esm-require-directory": "^2.6.8"
