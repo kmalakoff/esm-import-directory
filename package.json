@@ -32,7 +32,7 @@
     "prepublishOnly": "dtd \"npm run lint\" \"depcheck\"",
     "test": "dtd \"npm run test-cjs\" \"npm run test-esm\"",
     "test-cjs": "mocha-compat test/spec/**/*.test.js",
-    "test-esm": "nvs 14 mocha test/spec/**/*.test.mjs"
+    "test-esm": "nvu 14 mocha test/spec/**/*.test.mjs"
   },
   "dependencies": {
     "esm-require-directory": "^2.6.8"
@@ -52,7 +52,7 @@
     "lodash.size": "^4.2.0",
     "mocha": "^8.0.1",
     "mocha-compat": "^3.5.5",
-    "nvs": "^0.4.17",
+    "node-version-use": "^0.1.17",
     "prettier": "^2.0.5"
   },
   "engines": {
