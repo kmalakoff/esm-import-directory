@@ -1,6 +1,6 @@
 {
   "name": "esm-import-directory",
-  "version": "2.3.7",
+  "version": "2.3.8",
   "description": "Import a directory of modules using es6 modules import",
   "keywords": [
     "esm",
@@ -35,7 +35,7 @@
     "test-esm": "nvu 14 mocha test/spec/**/*.test.mjs"
   },
   "dependencies": {
-    "esm-require-directory": "^2.6.10"
+    "esm-require-directory": "^2.6.11"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
