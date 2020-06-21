@@ -35,7 +35,7 @@
     "test-esm": "nvu 14 mocha test/spec/**/*.test.mjs"
   },
   "dependencies": {
-    "esm-require-directory": "^2.6.10"
+    "esm-require-directory": "^2.6.11"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
