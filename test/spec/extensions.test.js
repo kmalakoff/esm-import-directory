@@ -1,10 +1,9 @@
 var path = require('path');
-var chai = require('chai');
+var assert = require('assert');
 var size = require('lodash.size');
 
 var requireDirectory = require('../..');
 
-var assert = chai.assert;
 var DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
 
 describe('extensions', function () {
