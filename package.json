@@ -1,6 +1,6 @@
 {
   "name": "esm-import-directory",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "Import a directory of modules using es6 modules import",
   "keywords": [
     "esm",
