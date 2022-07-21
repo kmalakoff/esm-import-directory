@@ -1,9 +1,8 @@
 var path = require('path');
-var chai = require('chai');
+var assert = require('assert');
 
 var requireDirectory = require('../..');
 
-var assert = chai.assert;
 var DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
 
 describe('default', function () {

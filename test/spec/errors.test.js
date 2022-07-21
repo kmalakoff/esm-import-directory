@@ -1,9 +1,7 @@
 var path = require('path');
-var chai = require('chai');
+var assert = require('assert');
 
 var requireDirectory = require('../..');
-
-var assert = chai.assert;
 
 describe('errors', function () {
   it('fail to import an errored module (cjs)', function (done) {
