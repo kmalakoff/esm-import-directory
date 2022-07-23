@@ -30,6 +30,7 @@
     "lib"
   ],
   "scripts": {
+    "build": "",
     "format": "prettier --write .",
     "lint": "eslint . --ext js,mjs",
     "prepublishOnly": "npm run lint && depcheck",
