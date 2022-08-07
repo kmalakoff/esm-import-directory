@@ -30,6 +30,7 @@
     "lib"
   ],
   "scripts": {
+    "build": "",
     "format": "prettier --write .",
     "lint": "eslint . --ext js,mjs",
     "prepublishOnly": "npm run lint && depcheck",
@@ -42,9 +43,9 @@
     "esm-require-directory": "^2.7.3"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^5.30.7",
+    "@typescript-eslint/parser": "^5.32.0",
     "depcheck": "^1.4.3",
-    "eslint": "^8.20.0",
+    "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
