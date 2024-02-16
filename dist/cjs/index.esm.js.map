@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.esm.mjs"],"sourcesContent":["import importDirectory from 'esm-require-directory';\n\nexport default importDirectory;\n"],"names":["importDirectory"],"mappings":";;;;+BAEA;;;eAAA;;;0EAF4B;;;;;;IAE5B,WAAeA,4BAAe"}

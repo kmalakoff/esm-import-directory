@@ -1,14 +1,14 @@
 var path = require('path');
 var assert = require('assert');
 
-var requireDirectory = require('../..');
+var requireDirectory = require('esm-import-directory');
 
 describe('errors', function () {
   it('fail to import an errored module (cjs)', function (done) {
     var DATA_DIR = path.join(__dirname, '..', 'data', 'errors');
 
     // errors on problematic cjs
-    requireDirectory(DATA_DIR, { extensions: ['.js'], recursive: false }, function (err, results) {
+    requireDirectory(DATA_DIR, { extensions: ['.js'], recursive: false }, function (err, _results) {
       assert.ok(!!err);
       done();
     });
@@ -19,7 +19,7 @@ describe('errors', function () {
 
     // skips on problematic esm
     try {
-      requireDirectory(DATA_DIR, { extensions: ['.mjs'], recursive: false }, function (err, results) {
+      requireDirectory(DATA_DIR, { extensions: ['.mjs'], recursive: false }, function (err, _results) {
         assert.ok(!err);
         done();
       });

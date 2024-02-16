@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"sourcesContent":["var requireDirectory = require('esm-require-directory');\n\nmodule.exports = requireDirectory;\n"],"names":["requireDirectory","require","module","exports"],"mappings":"AAAA,IAAIA,mBAAmBC,QAAQ;AAE/BC,OAAOC,OAAO,GAAGH"}

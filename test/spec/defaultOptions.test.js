@@ -1,7 +1,7 @@
 var path = require('path');
 var assert = require('assert');
 
-var requireDirectory = require('../..');
+var requireDirectory = require('esm-import-directory');
 
 var DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
 
