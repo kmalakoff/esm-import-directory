@@ -8,11 +8,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: ['latest']
+        node: ['20']
         os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3.4.1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4.4.1
         with:
           node-version: ${{ matrix.node-version }}
       - run: git config --global user.name "Github Actions"
