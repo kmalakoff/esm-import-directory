@@ -1,9 +1,9 @@
+import assert from 'assert';
 import path from 'path';
 import url from 'url';
-import assert from 'assert';
 import size from 'lodash.size';
 
-import importDirectory from '../../lib/index.mjs';
+import importDirectory from 'esm-import-directory';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
