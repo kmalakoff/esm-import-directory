@@ -1,1 +1,1 @@
-ignores: ["esm-import-directory", "depcheck", "ts-dev-stack", "@types/*", node-version-use]
+ignores: ["esm-import-directory", "depcheck", "ts-dev-stack", "@types/*"]
