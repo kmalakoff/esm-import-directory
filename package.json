@@ -38,32 +38,28 @@
   "scripts": {
     "build": "tsds build",
     "deploy": "tsds deploy",
-    "format": "biome check --apply-unsafe src/ test/",
-    "test": "npm run test-cjs && npm run test-esm",
-    "test-cjs": "tsds link && mocha-compat test/spec/**/*.test.js && tsds unlink",
-    "test-esm": "tsds link && nvu 14 mocha test/spec/**/*.test.mjs && tsds unlink",
-    "test:engines": "nvu engines npm test --no-timeout",
+    "format": "biome check --write --unsafe src/ test/",
+    "test": "tsds link && mocha-compat test/spec/**/*.test.js --no-timeouts && nvu latest mocha test/spec/**/*.test.mjs --no-timeouts && tsds unlink",
+    "test:engines": "tsds link && nvu engines mocha-compat test/spec/**/*.test.js --no-timeouts && nvu \">=12\" mocha test/spec/**/*.test.mjs --no-timeouts && tsds unlink",
     "version": "tsds version"
   },
   "dependencies": {
-    "esm-require-directory": "^2.8.0"
+    "esm-require-directory": "^2.9.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.5.3",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.19",
+    "@biomejs/biome": "^1.9.4",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.9.2",
     "depcheck": "^1.4.7",
     "lodash.size": "^4.2.0",
-    "mocha": "^10.3.0",
-    "mocha-compat": "^3.5.5",
-    "node-version-use": "^0.4.8",
-    "ts-dev-stack": "^0.12.3"
+    "mocha": "^10.8.2",
+    "ts-dev-stack": "^0.15.8"
   },
   "engines": {
     "node": ">=0.8"
   },
   "tsds": {
-    "source": "src/index.js",
+    "source": "src/index.esm.mjs",
     "targets": [
       "cjs",
       "esm"
