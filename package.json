@@ -49,11 +49,11 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^22.9.2",
+    "@types/node": "^22.9.3",
     "depcheck": "^1.4.7",
     "lodash.size": "^4.2.0",
     "mocha": "^10.8.2",
-    "ts-dev-stack": "^0.15.8"
+    "ts-dev-stack": "^0.16.0"
   },
   "engines": {
     "node": ">=0.8"
