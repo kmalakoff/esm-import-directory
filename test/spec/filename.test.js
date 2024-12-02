@@ -16,7 +16,7 @@ describe('filename', function () {
           recursive: true,
         },
         function (err, results) {
-          assert.ok(!err);
+          assert.ok(!err, err ? err.message : '');
           assert.ok(!Array.isArray(results));
           assert.equal(size(results), 10);
           for (var relativePath in results) {
@@ -36,7 +36,7 @@ describe('filename', function () {
           recursive: true,
         },
         function (err, results) {
-          assert.ok(!err);
+          assert.ok(!err, err ? err.message : '');
           assert.ok(!Array.isArray(results));
           assert.equal(size(results), 10);
           for (var relativePath in results) {
@@ -56,7 +56,7 @@ describe('filename', function () {
           recursive: true,
         },
         function (err, results) {
-          assert.ok(!err);
+          assert.ok(!err, err ? err.message : '');
           assert.ok(!Array.isArray(results));
           assert.equal(size(results), 10);
           for (var relativePath in results) {
@@ -77,7 +77,7 @@ describe('filename', function () {
           recursive: true,
         },
         function (err, results) {
-          assert.ok(!err);
+          assert.ok(!err, err ? err.message : '');
           assert.ok(Array.isArray(results));
           assert.equal(size(results), 10);
           done();
@@ -94,7 +94,7 @@ describe('filename', function () {
           recursive: false,
         },
         function (err, results) {
-          assert.ok(!err);
+          assert.ok(!err, err ? err.message : '');
           assert.ok(!Array.isArray(results));
           assert.equal(size(results), 2);
           for (var relativePath in results) {
@@ -116,7 +116,7 @@ describe('filename', function () {
           recursive: true,
         },
         function (err, results) {
-          assert.ok(!err);
+          assert.ok(!err, err ? err.message : '');
           assert.ok(!Array.isArray(results));
           assert.equal(size(results), 2);
           for (var relativePath in results) {
@@ -138,7 +138,7 @@ describe('filename', function () {
           recursive: true,
         },
         function (err, results) {
-          assert.ok(!err);
+          assert.ok(!err, err ? err.message : '');
           assert.ok(Array.isArray(results));
           assert.equal(size(results), 10);
           done();

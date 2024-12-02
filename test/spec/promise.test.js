@@ -15,7 +15,7 @@ describe('promise', function () {
         done();
       })
       .catch(function (err) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
       });
   });
 
@@ -26,7 +26,7 @@ describe('promise', function () {
         done();
       })
       .catch(function (err) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
       });
   });
 
@@ -37,7 +37,7 @@ describe('promise', function () {
         done();
       })
       .catch(function (err) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
       });
   });
 
@@ -48,7 +48,7 @@ describe('promise', function () {
         done();
       })
       .catch(function (err) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
       });
   });
 });
