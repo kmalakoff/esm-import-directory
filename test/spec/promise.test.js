@@ -6,8 +6,6 @@ var requireDirectory = require('esm-import-directory');
 var DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
 
 describe('promise', function () {
-  if (typeof Promise === 'undefined') return; // no promise support
-
   it('default: true, recursive: false', function (done) {
     requireDirectory(DATA_DIR, { default: true, recursive: false })
       .then(function (results) {
@@ -15,7 +13,7 @@ describe('promise', function () {
         done();
       })
       .catch(function (err) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
       });
   });
 
@@ -26,7 +24,7 @@ describe('promise', function () {
         done();
       })
       .catch(function (err) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
       });
   });
 
@@ -37,7 +35,7 @@ describe('promise', function () {
         done();
       })
       .catch(function (err) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
       });
   });
 
@@ -48,7 +46,7 @@ describe('promise', function () {
         done();
       })
       .catch(function (err) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
       });
   });
 });

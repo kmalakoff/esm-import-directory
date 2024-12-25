@@ -8,7 +8,7 @@ Import a directory of modules using es6 modules import
 import path from 'path';
 import importDirectory from 'esm-import-directory';
 
-const dirname = path.dirname(import.meta.url.replace('file://', ''));
+const __dirname = import.meta.dirname;
 
 (async () => {
   // import as array, eg. [{ hello: 'world' }]

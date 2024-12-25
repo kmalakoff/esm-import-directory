@@ -20,7 +20,7 @@ describe('errors', function () {
     // skips on problematic esm
     try {
       requireDirectory(DATA_DIR, { extensions: ['.mjs'], recursive: false }, function (err, _results) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
         done();
       });
     } catch (err) {
