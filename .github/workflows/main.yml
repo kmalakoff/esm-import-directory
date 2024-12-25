@@ -9,7 +9,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: [latest]
+        node: ['lts/Jod']
         os: [ubuntu-latest, windows-latest]
         # os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
@@ -19,8 +19,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: git config --global user.name "Github Actions"
       - run: git config --global user.email "actions@users.noreply.github.com"
-      - run: npm uninstall node-version-use -g
-      - run: npm install node-version-use -g
+      - run: npm uninstall node-version-use depcheck -g
+      - run: npm install node-version-use depcheck -g
+      - run: depcheck
       - run: npm ci
       - run: npm run version
       - run: npm run build

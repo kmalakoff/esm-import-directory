@@ -1,3 +1,1 @@
-var requireDirectory = require('esm-require-directory');
-
-module.exports = requireDirectory;
+module.exports = require('esm-require-directory');

@@ -25,13 +25,13 @@
     ".": {
       "import": "./dist/esm/index.esm.mjs",
       "require": "./dist/cjs/index.js",
-      "types": "./dist/types/index.d.ts"
+      "types": "./dist/types/index.esm.d.ts"
     },
     "./*": "./*"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.esm.mjs",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/types/index.esm.d.ts",
   "files": [
     "dist"
   ],
@@ -44,25 +44,22 @@
     "version": "tsds version"
   },
   "dependencies": {
-    "esm-require-directory": "^2.9.0"
+    "esm-require-directory": "^2.9.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^22.9.2",
+    "@types/node": "^22.10.2",
     "depcheck": "^1.4.7",
     "lodash.size": "^4.2.0",
-    "mocha": "^10.8.2",
-    "ts-dev-stack": "^0.15.8"
+    "mocha": "^11.0.1",
+    "ts-dev-stack": "^1.5.3"
   },
+  "packageManager": "npm@11.0.0+sha512.11dff29565d2297c74e7c594a9762581bde969f0aa5cbe6f5b3644bf008a16c065ece61094d9ffbb81125be38df8e1ba43eb8244b3d30c61eb797e9a2440e3ec",
   "engines": {
     "node": ">=0.8"
   },
   "tsds": {
-    "source": "src/index.esm.mjs",
-    "targets": [
-      "cjs",
-      "esm"
-    ]
+    "source": "src/index.esm.mjs"
   }
 }
