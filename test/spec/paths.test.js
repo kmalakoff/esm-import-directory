@@ -16,7 +16,7 @@ describe('paths', function () {
         paths: true,
       },
       function (err, results) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
         assert.equal(size(results), 2);
         done();
       }
@@ -32,7 +32,7 @@ describe('paths', function () {
         paths: true,
       },
       function (err, results) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
         assert.equal(size(results), 10);
         done();
       }
@@ -49,7 +49,7 @@ describe('paths', function () {
         paths: true,
       },
       function (err, results) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
         assert.equal(size(results), 2);
         done();
       }
@@ -66,7 +66,7 @@ describe('paths', function () {
         paths: true,
       },
       function (err, results) {
-        assert.ok(!err);
+        assert.ok(!err, err ? err.message : '');
         assert.equal(size(results), 10);
         done();
       }
