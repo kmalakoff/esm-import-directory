@@ -2,21 +2,37 @@ import assert from 'assert';
 import path from 'path';
 import url from 'url';
 import size from 'lodash.size';
+// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
+import Promise from 'pinkie-promise';
 
+// @ts-ignore
 import importDirectory from 'esm-import-directory';
 
-const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
+const isModule = typeof __filename === 'undefined';
 
 describe('extensions', () => {
+  (() => {
+    // patch and restore promise
+    let rootPromise: Promise;
+    before(() => {
+      rootPromise = global.Promise;
+      global.Promise = Promise;
+    });
+    after(() => {
+      global.Promise = rootPromise;
+    });
+  })();
+
   it('extensions: (default), recursive: false, paths: true', async () => {
     const results = await importDirectory(DATA_DIR, { recursive: false, paths: true });
-    assert.equal(size(results), 1);
+    assert.equal(size(results), isModule ? 1 : 2);
   });
 
   it('extensions: (default), recursive: true, paths: true', async () => {
     const results = await importDirectory(DATA_DIR, { recursive: true, paths: true });
-    assert.equal(size(results), 5);
+    assert.equal(size(results), isModule ? 5 : 10);
   });
 
   it('extensions: (default), recursive: false, paths: true, default: false', async () => {
@@ -67,12 +83,12 @@ describe('extensions', () => {
 
   it("extensions: ['.mjs'], recursive: false, paths: true", async () => {
     const results = await importDirectory(DATA_DIR, { extensions: ['.mjs'], recursive: false, paths: true });
-    assert.equal(size(results), 1);
+    assert.equal(size(results), isModule ? 1 : 2);
   });
 
   it("extensions: ['.mjs'], recursive: true, paths: true", async () => {
     const results = await importDirectory(DATA_DIR, { extensions: ['.mjs'], recursive: true, paths: true });
-    assert.equal(size(results), 5);
+    assert.equal(size(results), isModule ? 5 : 10);
   });
 
   it("extensions: ['.mjs'], recursive: false, paths: true, default: false", async () => {
