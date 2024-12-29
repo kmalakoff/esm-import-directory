@@ -20,18 +20,18 @@
   },
   "license": "MIT",
   "author": "Kevin Malakoff",
-  "type": "commonjs",
+  "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.esm.mjs",
+      "import": "./dist/esm/index.mjs",
       "require": "./dist/cjs/index.js",
-      "types": "./dist/types/index.esm.d.ts"
+      "types": "./dist/types/index.d.ts"
     },
     "./*": "./*"
   },
   "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.esm.mjs",
-  "types": "dist/types/index.esm.d.ts",
+  "module": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -39,12 +39,12 @@
     "build": "tsds build",
     "deploy": "tsds deploy",
     "format": "biome check --write --unsafe src/ test/",
-    "test": "tsds link && mocha-compat test/spec/**/*.test.js --no-timeouts && nvu latest mocha test/spec/**/*.test.mjs --no-timeouts && tsds unlink",
-    "test:engines": "tsds link && nvu engines mocha-compat test/spec/**/*.test.js --no-timeouts && nvu \">=12\" mocha test/spec/**/*.test.mjs --no-timeouts && tsds unlink",
+    "test": "tsds test:node --no-timeouts",
+    "test:engines": "nvu engines tsds test:node --no-timeouts",
     "version": "tsds version"
   },
   "dependencies": {
-    "esm-require-directory": "^2.9.1"
+    "esm-require-directory": "^3.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
@@ -52,14 +52,13 @@
     "@types/node": "^22.10.2",
     "depcheck": "^1.4.7",
     "lodash.size": "^4.2.0",
-    "mocha": "^11.0.1",
-    "ts-dev-stack": "^1.5.3"
+    "pinkie-promise": "^2.0.1",
+    "tsds-mocha": "^1.8.1"
   },
-  "packageManager": "npm@11.0.0+sha512.11dff29565d2297c74e7c594a9762581bde969f0aa5cbe6f5b3644bf008a16c065ece61094d9ffbb81125be38df8e1ba43eb8244b3d30c61eb797e9a2440e3ec",
   "engines": {
     "node": ">=0.8"
   },
   "tsds": {
-    "source": "src/index.esm.mjs"
+    "source": "src/index.ts"
   }
 }
