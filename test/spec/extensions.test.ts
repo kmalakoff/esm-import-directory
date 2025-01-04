@@ -1,12 +1,10 @@
 import assert from 'assert';
 import path from 'path';
 import url from 'url';
-import size from 'lodash.size';
-// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
-import Promise from 'pinkie-promise';
-
 // @ts-ignore
 import importDirectory from 'esm-import-directory';
+import size from 'lodash.size';
+import Pinkie from 'pinkie-promise';
 
 const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
@@ -15,10 +13,12 @@ const isModule = typeof __filename === 'undefined';
 describe('extensions', () => {
   (() => {
     // patch and restore promise
+    // @ts-ignore
     let rootPromise: Promise;
     before(() => {
       rootPromise = global.Promise;
-      global.Promise = Promise;
+      // @ts-ignore
+      global.Promise = Pinkie;
     });
     after(() => {
       global.Promise = rootPromise;

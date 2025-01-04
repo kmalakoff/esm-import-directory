@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "lib": ["es2015", "dom", "dom.iterable"],
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "lib": ["es2015"],
     "types": ["mocha", "node"],
     "target": "es2020",
     "module": "esnext",
-    "moduleResolution": "bundler",
-    "emitDeclarationOnly": true,
-    "declaration": true,
-    "allowImportingTsExtensions": true,    
+    "moduleResolution": "node",
     "sourceMap": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
