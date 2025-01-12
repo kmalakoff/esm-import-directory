@@ -40,7 +40,7 @@
     "version": "tsds version"
   },
   "dependencies": {
-    "esm-require-directory": "^3.0.8"
+    "esm-require-directory": "^3.0.10"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
