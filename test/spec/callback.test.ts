@@ -12,7 +12,7 @@ const isModule = typeof __filename === 'undefined';
 describe('callback', () => {
   it('default: true, recursive: false', (done) => {
     importDirectory(DATA_DIR, { default: true, recursive: false }, (err, results) => {
-      if (err) return done(err);
+      if (err) return done(err.message);
       assert.equal((results as unknown[]).length, isModule ? 1 : 2);
       done();
     });
@@ -20,7 +20,7 @@ describe('callback', () => {
 
   it('default: true, recursive: true', (done) => {
     importDirectory(DATA_DIR, { default: true, recursive: true }, (err, results) => {
-      if (err) return done(err);
+      if (err) return done(err.message);
       assert.equal((results as unknown[]).length, isModule ? 5 : 10);
       done();
     });
@@ -28,7 +28,7 @@ describe('callback', () => {
 
   it('default: false, recursive: false', (done) => {
     importDirectory(DATA_DIR, { default: false, recursive: false }, (err, results) => {
-      if (err) return done(err);
+      if (err) return done(err.message);
       assert.equal((results as unknown[]).length, 2);
       done();
     });
@@ -36,7 +36,7 @@ describe('callback', () => {
 
   it('default: false, recursive: true', (done) => {
     importDirectory(DATA_DIR, { default: false, recursive: true }, (err, results) => {
-      if (err) return done(err);
+      if (err) return done(err.message);
       assert.equal((results as unknown[]).length, 10);
       done();
     });
