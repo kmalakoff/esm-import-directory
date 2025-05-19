@@ -41,7 +41,7 @@
     "version": "tsds version"
   },
   "dependencies": {
-    "esm-require-directory": "^3.0.25"
+    "esm-require-directory": "^3.0.26"
   },
   "devDependencies": {
     "@types/mocha": "*",
