@@ -1,10 +1,10 @@
 import assert from 'assert';
-import path from 'path';
-import url from 'url';
 // @ts-ignore
 import importDirectory from 'esm-import-directory';
 import size from 'lodash.size';
+import path from 'path';
 import Pinkie from 'pinkie-promise';
+import url from 'url';
 
 const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data', 'directory');
