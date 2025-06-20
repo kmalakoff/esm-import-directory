@@ -36,12 +36,12 @@
   "scripts": {
     "build": "tsds build",
     "format": "biome check --write --unsafe",
-    "test": "tsds test:node --no-timeouts",
+    "test": "mocha --no-timeouts test/**/*.test.*",
     "test:engines": "nvu engines tsds test:node --no-timeouts",
     "version": "tsds version"
   },
   "dependencies": {
-    "esm-require-directory": "^3.0.38"
+    "esm-require-directory": "^3.0.39"
   },
   "devDependencies": {
     "@types/mocha": "*",
