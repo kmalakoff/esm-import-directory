@@ -30,9 +30,9 @@ describe('filename', () => {
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), isModule ? 5 : 10);
-      Object.entries(results).forEach(([name]) => {
+      for (const name in results) {
         assert.equal(path.extname(name), '');
-      });
+      }
     });
 
     it('filename: true, recursive: true', async () => {
@@ -43,9 +43,9 @@ describe('filename', () => {
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), isModule ? 5 : 10);
-      Object.entries(results).forEach(([name]) => {
+      for (const name in results) {
         assert.equal(path.extname(name), '');
-      });
+      }
     });
 
     it('filename: false, recursive: true', async () => {
@@ -56,9 +56,9 @@ describe('filename', () => {
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), isModule ? 5 : 10);
-      Object.entries(results).forEach(([name]) => {
+      for (const name in results) {
         assert.equal(path.extname(name), isModule ? '.mjs' : '.js');
-      });
+      }
     });
   });
 
@@ -80,10 +80,11 @@ describe('filename', () => {
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), isModule ? 1 : 2);
-      Object.entries(results).forEach(([name, value]) => {
+      for (const name in results) {
+        const value = results[name];
         assert.ok(!Array.isArray(value));
         assert.equal(path.extname(name), '');
-      });
+      }
     });
 
     it('filename: true, recursive: true', async () => {
@@ -94,10 +95,11 @@ describe('filename', () => {
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), isModule ? 1 : 2);
-      Object.entries(results).forEach(([name, value]) => {
+      for (const name in results) {
+        const value = results[name];
         assert.equal((value as unknown[]).length, 5);
         assert.equal(path.extname(name), '');
-      });
+      }
     });
 
     it('filename: false, recursive: true', async () => {
