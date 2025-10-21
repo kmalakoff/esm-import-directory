@@ -1,5 +1,4 @@
 import assert from 'assert';
-// @ts-ignore
 import importDirectory from 'esm-import-directory';
 import size from 'lodash.size';
 import path from 'path';
