@@ -1,1 +1,1 @@
-ignores: ["node-version-use", "ts-dev-stack", "@biomejs/biome", "esm-import-directory"]
+ignores: ["node-version-use", "ts-dev-stack", "esm-import-directory"]
