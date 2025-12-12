@@ -43,16 +43,16 @@
     "version": "tsds version"
   },
   "dependencies": {
-    "esm-require-directory": "*"
+    "esm-require-directory": "^3.1.10"
   },
   "devDependencies": {
-    "@types/mocha": "*",
-    "@types/node": "*",
-    "lodash.size": "*",
-    "node-version-use": "*",
-    "pinkie-promise": "*",
-    "ts-dev-stack": "*",
-    "tsds-config": "*"
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^25.0.1",
+    "lodash.size": "^4.2.0",
+    "node-version-use": "^2.1.5",
+    "pinkie-promise": "^2.0.1",
+    "ts-dev-stack": "^1.21.3",
+    "tsds-config": "^0.2.1"
   },
   "engines": {
     "node": ">=0.8"
