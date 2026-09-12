@@ -1,8 +1,9 @@
 import path from 'path';
-import chai from 'chai'; const { assert } = chai;
+import chai from 'chai';
 
 import importDirectory from '../..';
 
+const { assert } = chai;
 const dirname = path.dirname(import.meta.url.replace('file://', ''));
 const DATA_DIRECTORY = path.join(dirname, '..', 'data', 'directory');
 

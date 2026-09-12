@@ -1,8 +1,9 @@
 import path from 'path';
-import chai from 'chai'; const { assert } = chai;
+import chai from 'chai';
 
 import importDirectory from '../..';
 
+const { assert } = chai;
 const dirname = path.dirname(import.meta.url.replace('file://', ''));
 
 describe('errors', () => {
@@ -10,8 +11,7 @@ describe('errors', () => {
     const DATA_DIRECTORY = path.join(dirname, '..', 'data', 'errors', 'cjs');
     let err;
 
-    try { await importDirectory(DATA_DIRECTORY, { extensions: ['.mjs'], recursive: false }); }
-    catch (_err) { err = _err; }
+    try { await importDirectory(DATA_DIRECTORY, { extensions: ['.mjs'], recursive: false }); } catch (_err) { err = _err; }
 
     assert.ok(!!err);
   });
@@ -20,8 +20,7 @@ describe('errors', () => {
     const DATA_DIRECTORY = path.join(dirname, '..', 'data', 'errors', 'cjs');
     let err;
 
-    try { await importDirectory(DATA_DIRECTORY, { extensions: ['.js'], recursive: false }); }
-    catch (_err) { err = _err; }
+    try { await importDirectory(DATA_DIRECTORY, { extensions: ['.js'], recursive: false }); } catch (_err) { err = _err; }
 
     assert.ok(!!err);
   });
