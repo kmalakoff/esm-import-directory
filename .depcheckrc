@@ -1,1 +1,1 @@
-ignores: ["node-version-use", "ts-dev-stack", "esm-import-directory"]
+ignores: ["esm-import-directory", "node-version-use", "ts-dev-stack"]
