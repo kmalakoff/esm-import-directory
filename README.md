@@ -1,27 +1,35 @@
-## esm-import-directory
+# esm-import-directory
 
-Import a directory of modules using es6 modules import
+Import a directory of ES modules and return their exports.
 
-**Usage**
+```sh
+npm install esm-import-directory
+```
+
+## Usage
 
 ```js
 import path from 'path';
+import { fileURLToPath } from 'url';
 import importDirectory from 'esm-import-directory';
 
-const __dirname = import.meta.dirname;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 (async () => {
-  // import as array, eg. [{ hello: 'world' }]
-  const typeDefs = await importDirectory(path.join(dirname, 'typeDefs'));
+  // Returns an array of module exports.
+  const typeDefs = await importDirectory(path.join(__dirname, 'typeDefs'));
 
-  // import with paths, eg. { 'filename.mjs': { hello: 'world' } }
-  const typeDefPaths = await importDirectory(path.join(dirname, 'typeDefs'), {
+  // Set paths to return an object keyed by relative file path.
+  const typeDefPaths = await importDirectory(path.join(__dirname, 'typeDefs'), {
     paths: true,
   });
 })();
 ```
 
-**Options**
+The default extension is `.mjs`. By default, the promise resolves to an array of
+default exports. Set `default: false` to keep each module's full namespace.
+
+## Options
 
 - recursive (boolean) - traverse modules recursively. Default: false.
 - paths (boolean) - modules returned as an object with relative paths vs as an array. Default: false.

@@ -79,8 +79,9 @@ describe('filename', () => {
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), isModule ? 1 : 2);
-      for (const name in results) {
-        const value = results[name];
+      const r1 = results as Record<string, unknown>;
+      for (const name in r1) {
+        const value = r1[name];
         assert.ok(!Array.isArray(value));
         assert.equal(path.extname(name), '');
       }
@@ -94,8 +95,9 @@ describe('filename', () => {
       });
       assert.ok(!Array.isArray(results));
       assert.equal(size(results), isModule ? 1 : 2);
-      for (const name in results) {
-        const value = results[name];
+      const r2 = results as Record<string, unknown>;
+      for (const name in r2) {
+        const value = r2[name];
         assert.equal((value as unknown[]).length, 5);
         assert.equal(path.extname(name), '');
       }
