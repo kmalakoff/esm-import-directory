@@ -10,3 +10,4 @@ CLAUDE.md
 npm-debug.log*
 .tmp/
 .cache/
+.archive/
