@@ -35,7 +35,7 @@
     "test-esm": "nvu 14 mocha test/spec/**/*.test.mjs"
   },
   "dependencies": {
-    "esm-require-directory": "^2.6.9"
+    "esm-require-directory": "^2.6.10"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -52,7 +52,7 @@
     "lodash.size": "^4.2.0",
     "mocha": "^8.0.1",
     "mocha-compat": "^3.5.5",
-    "node-version-use": "^0.1.17",
+    "node-version-use": "^0.1.18",
     "prettier": "^2.0.5"
   },
   "engines": {
