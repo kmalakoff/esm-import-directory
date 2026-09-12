@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/kmalakoff/esm-require-directory/issues"
   },
-  "homepage": "https://github.com/kmalakoff/esm-require-directory#readme"
+  "homepage": "https://github.com/kmalakoff/esm-require-directory#readme",
+  "dependencies": {
+    "pify": "^3.0.0"
+  }
 }
